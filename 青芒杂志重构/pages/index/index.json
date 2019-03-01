@@ -1,0 +1,8 @@
+
+{
+  "usingComponents": {
+    "y-bigImg":"/components/bigImage/cmp",
+    "y-pureText":"/components/pureText/cmp",
+    "y-imageText":"/components/imageText/cmp"
+  }
+}

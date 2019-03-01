@@ -1,0 +1,10 @@
+<!--components/bigImage/cm.wxml-->
+<!-- <text>components/bigImage/cm.wxml</text> -->
+
+
+
+<!-- 组件需要在要使用的页面的json文件中进行配置之后才能够用 -->
+<view class="container">
+    <image src="{{mySrc}}" class="image" mode="widthFix"></image>
+    <text class="text">{{mainTitle}}</text>
+</view>
