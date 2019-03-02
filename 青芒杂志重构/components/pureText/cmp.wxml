@@ -3,6 +3,6 @@
 
 
 <view class="container">
-    <view class="mainTitle">{{mainTitle}}达瓦达瓦达瓦改日九分v多好哇大王阿、</view>
-    <view class="subHead">{{subHead}}低洼低洼就按大家尽快立法v男性乘客</view>
+    <view class="mainTitle">{{mainTitle}}</view>
+    <view class="subHead">{{subHead}}</view>
 </view>

@@ -1,5 +1,5 @@
-
 {
+  "component": true,
   "usingComponents": {
     "y-bigImg":"/components/bigImage/cmp",
     "y-pureText":"/components/pureText/cmp",
@@ -8,7 +8,6 @@
     "y-video":"/components/video/cmp",
     "y-tag":"/components/tag/cmp",
     "y-more":"/components/more/cmp",
-    "y-like":"/components/like/cmp",
-    "y-article":"/components/article/cmp"
+    "y-like":"/components/like/cmp"
   }
 }

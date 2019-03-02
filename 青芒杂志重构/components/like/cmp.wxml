@@ -1,0 +1,7 @@
+<!--components/like/cmp.wxml-->
+<!-- <text>components/like/cmp.wxml</text> -->
+
+<view class="container" catchtap="onLike">
+    <image class="image" src="./image/Icon_circle.png" hidden="{{like}}" ></image>
+    <image class="image" src="./image/Icon_circle_fill.png" hidden="{{!like}}"></image>
+</view>

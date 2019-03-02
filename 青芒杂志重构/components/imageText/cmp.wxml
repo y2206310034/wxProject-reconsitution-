@@ -1,2 +1,15 @@
 <!--components/imageText/cmp.wxml-->
-<text>components/imageText/cmp.wxml</text>
+<!-- <text>components/imageText/cmp.wxml</text> -->
+
+
+<view class="container my-class">
+    <view class="text-container">
+        <view class="main-title">{{mainTitle}}</view>
+        <view class="sub-head">{{subHead}}</view>
+    </view>
+    <view class="img-container">
+        <image src="{{imageSrc}}" class="image"></image>
+    </view>
+</view>
+
+

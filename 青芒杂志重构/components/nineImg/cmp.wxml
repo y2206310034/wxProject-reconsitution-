@@ -1,0 +1,13 @@
+<!--components/nineImg/cmp.wxml-->
+<!-- <text>components/nineImg/cmp.wxml</text> -->
+
+<view class="container">
+    <view class="image-container">
+        <!-- 不经常切换用wx:if  经常切换用hidden-->
+        <image class="image" catchtap="onTap" wx:for="{{imageArr}}" wx:key="*this" src="{{item}}" data-index="{{index}}" wx:if="{{index<9}}"></image>
+        <text class="image-num" wx:if="{{imageArr.length>9}}">{{imageArr.length}}</text>
+    </view>
+    <view class="text-container">
+        <text class="main-title">{{mainTitle}}</text>
+    </view>
+</view>

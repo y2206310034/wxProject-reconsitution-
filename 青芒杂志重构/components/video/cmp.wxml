@@ -1,0 +1,23 @@
+<!--components/video/cmp.wxml-->
+<!-- <text>components/video/cmp.wxml</text> -->
+
+
+<view class="container">
+    <view class="video-container">
+        <!--  在自定义组件中要想通过api控制播放必须给video标签添加id值 -->
+        <video hidden="{{showPoster}}" catchended="onVideoEnd" src="{{src}}" class="video" id="{{videoId}}"></video>
+        <view class="poster-container"  hidden="{{!showPoster}}">
+            <image class="poster" src="{{posterSrc}}"></image>
+            <view class="control" catchtap="onVideoPlayTap">
+                <image class="play-btn" src="../../image/icon/icon_play.png"></image>
+                <text class="duration">{{duration}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="main-title">
+        <text>{{mainTitle}}</text>
+    </view>
+
+    <view class="mask" hidden="{{showPoster}}" catchtap="onMaskTap"></view>
+</view>

@@ -1,13 +1,11 @@
-// components/pureText/cmp.js
-import {myBeh} from "../behaviors/my-behaviors.js"
-
-
+// components/article/cmp.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors:[myBeh],
   properties: {
+    type:Number,
+    imageArr:Array
   },
 
   /**

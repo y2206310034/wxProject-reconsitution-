@@ -1,13 +1,10 @@
-// components/pureText/cmp.js
-import {myBeh} from "../behaviors/my-behaviors.js"
-
-
+// components/like/cmp.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors:[myBeh],
   properties: {
+    like:Boolean
   },
 
   /**
@@ -21,6 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onLike(){
+      this.setData({
+        like:!this.data.like
+      })
+    }
   }
 })

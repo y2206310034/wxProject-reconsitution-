@@ -1,10 +1,13 @@
 // components/imageText/cmp.js
+import {myBeh} from "../behaviors/my-behaviors.js"
+
 Component({
   /**
    * 组件的属性列表
    */
-  properties: {
+  behaviors:[myBeh],
 
+  properties: {
   },
 
   /**
@@ -19,5 +22,6 @@ Component({
    */
   methods: {
 
-  }
+  },
+  externalClasses: ['my-class']
 })
