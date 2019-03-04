@@ -15,9 +15,6 @@ Component({
       type:String,
       value:"",
       observer:function(newVal,oldVal,a){
-        console.log(newVal);
-        console.log(oldVal);
-        console.log(a);
       }
     },
     // mainTitle:String

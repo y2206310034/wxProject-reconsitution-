@@ -1,10 +1,10 @@
-// components/article/cmp.js
+// components/add/cmp.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    article:Object
+
   },
 
   /**

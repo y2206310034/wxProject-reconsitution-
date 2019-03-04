@@ -1,0 +1,24 @@
+/* components/articleList/cmp.wxss */
+
+.container{
+    background-color:rgba(0,0,0,.1);
+    padding:25rpx;
+}
+
+/* 自定义组件设置块级样式必须变为块级元素  默认为行级元素 */
+.article{
+    display:block;
+    margin-top:30rpx;
+}
+
+.no-more{
+    display:block;
+    color:#666;
+    font-size:26rpx;
+    text-align: center;
+    margin-top:30rpx;
+}
+.loading{
+    display:block;
+    margin:30rpx 315rpx;
+}

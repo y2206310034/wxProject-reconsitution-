@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "y-tag":"/components/tag/cmp"
+  }
+}

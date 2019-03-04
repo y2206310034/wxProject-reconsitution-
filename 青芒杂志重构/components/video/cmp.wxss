@@ -1,6 +1,6 @@
 /* components/video/cmp.wxss */
 
-.container,.poster-cotainer{
+.container,.video-container{
     position: relative;
 }
 .poster-container .poster,.video{

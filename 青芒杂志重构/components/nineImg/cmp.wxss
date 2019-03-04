@@ -23,8 +23,8 @@
 
 .image-num{
     position: absolute;
-    right:85rpx;
-    bottom:85rpx;
+    right:70rpx;
+    bottom:80rpx;
     background:rgba(0,0,0,.6);
     color:#fff;
     padding:1rpx 15rpx;

@@ -8,6 +8,7 @@
     "y-video":"/components/video/cmp",
     "y-tag":"/components/tag/cmp",
     "y-more":"/components/more/cmp",
-    "y-like":"/components/like/cmp"
+    "y-like":"/components/like/cmp",
+    "y-imgBtn":"/components/imgBtn/cmp"
   }
 }

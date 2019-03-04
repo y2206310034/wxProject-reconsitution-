@@ -32,4 +32,24 @@
 <!-- <y-more tag="心理"></y-more> -->
 
 <!-- <y-like like="{{true}}"></y-like> -->
-<y-article type="{{4}}" image-arr="{{imageArr}}"></y-article>
+<!-- <y-article article="{{articleList[0]}}"></y-article> -->
+
+<y-nav class="nav" catch:nav="onNav"></y-nav>
+
+<y-recommend recommend="{{recommendInfo}}" class="recommend" magazineId="{{magazineId}}"></y-recommend>
+
+
+<y-tagList mark-list="{{markTypeList}}">
+        <y-add slot="before" wx:if="{{magazineId === 0}}"></y-add>
+        <view slot="after" class="to-catalog" catchtap="onCatalog" wx:if="{{magazineId === 0}}">•••</view>
+</y-tagList>
+
+
+
+<y-articleList article-list="{{articleList}}"
+               more="{{more}}"
+               magazine-id="{{magazineId}}"></y-articleList>
+
+<view class="loading-container" wx:if="{{loading}}">
+      <y-loading class="loading"></y-loading>
+</view>

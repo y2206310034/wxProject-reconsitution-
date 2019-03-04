@@ -1,0 +1,16 @@
+<!--components/recommend/cmp.wxml-->
+<!-- <text>components/recommend/cmp.wxml</text> -->
+
+<view class="container">
+    <text class="big-title" >{{magazineId === 0 ? date: magazineTypeArr[magazineId]}}</text>
+    <text class="title">{{recommend.title}}</text>
+
+    <!--图片和骨架图不会同时出现   可以通过图片链接是否存在控制图片和骨架图的显隐 -->
+    <!-- 使用hidden时标签会先正确加载图片资源  如果是wx:if就不会加载（在没有正确渲染出来之前是不会在意这个区域是什么内容的） -->
+    <image class="image" src="{{recommend.imgSrc}}"  wx:if="{{recommend.imgSrc}}"></image>
+
+    <!-- skeleton 骨骼 骨架 -->
+    <view class="skeleton" hidden="{{recommend.imgSrc}}">
+        <view class="loader" ></view>
+    </view>
+</view>

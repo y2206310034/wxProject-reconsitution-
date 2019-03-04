@@ -1,14 +1,13 @@
 
 {
   "usingComponents": {
-    "y-bigImg":"/components/bigImage/cmp",
-    "y-pureText":"/components/pureText/cmp",
-    "y-imageText":"/components/imageText/cmp",
-    "y-nineImg":"/components/nineImg/cmp",
-    "y-video":"/components/video/cmp",
-    "y-tag":"/components/tag/cmp",
-    "y-more":"/components/more/cmp",
-    "y-like":"/components/like/cmp",
-    "y-article":"/components/article/cmp"
+    "y-articleList":"/components/articleList/cmp",
+    "y-nav":"/components/nav/cmp",
+    "y-recommend":"/components/recommend/cmp",
+    "y-tagList":"/components/tagList/cmp",
+    "y-add":"/components/add/cmp",
+    "y-loading":"/components/loading/cmp"
+
+
   }
 }

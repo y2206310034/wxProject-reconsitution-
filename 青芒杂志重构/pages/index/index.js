@@ -1,21 +1,92 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {IndexModel} from "../../models/index.js"
+const indexModel = new IndexModel()
+import {random} from "../../utils/randomStr.js"
+
+
+// 如果用api设置tabBar时设置颜色需要用#666666不能够简写为#666
+
 
 Page({
   data: {
-    imageArr:["https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3967239004,1951414302&fm=27&gp=0.jpg",
-              "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2735633715,2749454924&fm=27&gp=0.jpg",
-              "https://ss0.bdstatic.com/6Ox1bjeh1BF3odCf/it/u=3660968530,985748925&fm=191&app=48&size=h300&n=0&g=4n&f=JPEG?sec=1853310920&t=5e64af964be378c6c2a3b0acc65dfe24",
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4109715124,101168126&fm=27&gp=0.jpg",
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=260329114,3367670618&fm=27&gp=0.jpg",
-              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3272199364,3404297250&fm=27&gp=0.jpg",
-              "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1286488394,241255406&fm=27&gp=0.jpg",
-              "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=984291061,130055106&fm=27&gp=0.jpg",
-              "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1943907177,926071003&fm=27&gp=0.jpg"
-    ] 
+    more:"",
+    magazineId:0,
+    loading:true,
+    articleList:[],
+    markTypeList:[],
+    recommendInfo:{}
   },
-  onLoad: function () {
+  onReachBottom(){
 
+    // 在这里改变自定义组件的属性值  可以在组件的对应属性的observer监控到属性的改变
+
+    this.setData({
+      more:random(20)
+    })
+  },
+  onCatalog(){
+    wx.navigateTo({
+      url:"/pages/catalog/catalog"
+    })
+  },
+
+// 点击nav时触发的事件  
+  onNav(e){
+    const magazineId = e.detail.index;
+
+
+    this.setMagazineId(magazineId);
+    this.resetData();
+    this.scrollPageToTop();
+    this._getInfo( magazineId );
+  },
+
+  resetData(){
+    this.setData({
+      // 在请求数据之前将数据先清空   解决在加载数据时不显示骨架图的问题（如果不删除的话，图片连接就一直存在）
+      articleList:[],
+      markTypeList:[],
+      recommendInfo:{}
+    })
+  },
+  setMagazineId(magazineId){
+    this.setData({
+      magazineId,
+    })
+  },
+
+
+  onLoad: function (options) {
+    this._getInfo();
+  },
+
+  scrollPageToTop(){
+    // 控制页面滚动的api
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+  },
+  _getInfo(magazineId){
+
+    const articleList = indexModel.getArticleList(magazineId)
+    const markTypeList = indexModel.getMarkTypeList(magazineId)
+    const recommendInfo = indexModel.getRecommendInfo(magazineId)
+
+    Promise.all([articleList,markTypeList,recommendInfo]).then(res=>{
+      this.setData({
+        articleList:res[0],
+        markTypeList:res[1],
+        recommendInfo:res[2]
+      })
+      this.hideLoading();
+    })
+  },
+  hideLoading(){
+    this.setData({
+      loading:false
+    })
   }
 })
+
+
