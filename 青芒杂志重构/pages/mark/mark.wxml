@@ -34,10 +34,10 @@
             <image src="/image/mark/relay.png"></image>
         </button> -->
     </view>
+    <view hidden="{{!userInfo.nickName}}">
+        <y-articleList article-list="{{articleList}}">
 
-
-    <y-articleList>
-
-    </y-articleList>
+        </y-articleList>
+    </view>
 
 </view>

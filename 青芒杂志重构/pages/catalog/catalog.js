@@ -1,11 +1,13 @@
 // pages/catalog/catalog.js
+
+import {tagInfoList} from "../../utils/tagList.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tagInfoList:tagInfoList
   },
 
   /**

@@ -51,7 +51,7 @@
             <y-imgBtn open-type="share" class="box img-btn">
                  <image src="/image/mark/relay.png" slot="img"></image>
             </y-imgBtn>
-            <y-like like="{{}}" class="box"></y-like>
+            <y-like like="{{likeStatus}}" class="box" catch:like="onLike"></y-like>
         </view>
     </view>
 

@@ -6,14 +6,18 @@ Page({
    */
   data: {
     userInfo:{},
-    authorized:false
+    authorized:false,
+    articleList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.userAuthorized();
 
+  },
+  userAuthorized(){
     // 在页面加载进来时加载用户信息
     wx.getSetting({
       success:res=>{
@@ -42,7 +46,15 @@ Page({
         userInfo,
         authorized:true
       })
+      this.getLikeList();
     }
+  },
+  getLikeList(){
+     // 从缓存中取值
+    const likeList = wx.getStorageSync('likeList') || [];
+    this.setData({
+      articleList:likeList
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -55,7 +67,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getLikeList();
   },
 
   /**

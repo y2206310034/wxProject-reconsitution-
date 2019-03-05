@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/catalog/catalog",
     "pages/mark/mark",
     "pages/index/index",
-    "pages/catalog/catalog",
     "components/imgBtn/cmp"
   ],
   "window": {

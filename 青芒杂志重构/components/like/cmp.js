@@ -19,8 +19,16 @@ Component({
    */
   methods: {
     onLike(){
+
+      const like = !this.data.like
       this.setData({
-        like:!this.data.like
+        like
+      })
+
+
+      // 通过注册事件  可以在article组件中触发事件拿到该组件中的数据
+      this.triggerEvent("like",{
+        like
       })
     }
   }
